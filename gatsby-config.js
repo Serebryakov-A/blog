@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Andrey Serebryakov`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Andrey Serebryakov`,
+      summary: `I create things that noone needs`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `Blog`,
     social: {
-      twitter: `kylemathews`,
+      github: `https://github.com/Serebryakov-A`,
+      linkedin: 'https://linkedin.com/in/serebrjakovs-andrejs-850617134'
     },
   },
   plugins: [
@@ -18,6 +18,12 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
       },
     },
     {

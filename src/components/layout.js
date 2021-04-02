@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import Header from "../components/header"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -7,22 +7,14 @@ const Layout = ({ location, title, children }) => {
   let header
 
   if (isRootPath) {
-    header = (
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
-      </h1>
-    )
+    header = title
   } else {
-    header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
-    )
+    header = null
   }
 
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
+      <Header header={header}></Header>
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with
