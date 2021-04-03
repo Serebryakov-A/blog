@@ -1,39 +1,31 @@
 import React from "react"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import HeaderTitle from '../components/header-title'
+import Navigation from '../components/navigation'
+import HeaderExternalLinks from '../components/header-external-links'
+import { Flex } from "@theme-ui/components"
 
-const ListLink = props => (
-  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
-    <Link to={props.to}>{props.children}</Link>
-  </li>
-)
-
-export default function Header(props) {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            social {
-              twitter
-              github
-              linkedin
-            }
-          }
-        }
-      }
-    `
-  )
-
+export default function Header() {
   return (
-    <header style={{ marginBottom: `1.5rem` }}>
-      <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
-        <h3 style={{ display: `inline` }}>{props.header}</h3>
-      </Link>
-      <ul style={{ listStyle: `none`, float: `right` }}>
-        <ListLink to="/">Home</ListLink>
-        <ListLink to={data.site.siteMetadata.social.github}>GitHub</ListLink>
-        <ListLink to={data.site.siteMetadata.social.linkedin}>LinkedIn</ListLink>
-      </ul>
+    <header sx={{ mb: [5, 6] }}>
+      <Flex sx={{ alignItems: `center`, justifyContent: `space-between` }}>
+        <HeaderTitle />
+      </Flex>
+      <div
+        sx={{
+          boxSizing: `border-box`,
+          display: `flex`,
+          variant: `dividers.bottom`,
+          alignItems: `center`,
+          justifyContent: `space-between`,
+          mt: 3,
+          color: `secondary`,
+          a: { color: `secondary`, ":hover": { color: `heading` } },
+          flexFlow: `wrap`,
+        }}
+      >
+        <Navigation />
+        <HeaderExternalLinks />
+      </div>
     </header>
   )
 }

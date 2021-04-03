@@ -6,13 +6,30 @@ module.exports = {
       summary: `I create things that noone needs`,
     },
     description: `Blog`,
-    social: {
-      github: `https://github.com/Serebryakov-A`,
-      linkedin: 'https://linkedin.com/in/serebrjakovs-andrejs-850617134'
-    },
+    social: [
+      {
+        name: 'GitHub',
+        url: `https://github.com/Serebryakov-A`
+      },
+      {
+        name: 'LinkedIn',
+        url: 'https://linkedin.com/in/serebrjakovs-andrejs-850617134'
+      }
+    ],
+    navigation: [
+      {
+        title: 'About',
+        slug: '/about'
+      },
+      {
+        title: 'Projects',
+        slug: '/projects'
+      }
+    ]
   },
   plugins: [
     `gatsby-plugin-image`,
+    'gatsby-plugin-theme-ui',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
