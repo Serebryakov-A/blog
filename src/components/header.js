@@ -1,31 +1,38 @@
-import React from "react"
-import HeaderTitle from '../components/header-title'
-import Navigation from '../components/navigation'
-import HeaderExternalLinks from '../components/header-external-links'
-import { Flex } from "@theme-ui/components"
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import { Link } from "gatsby"
+import { rhythm } from "../utils/typography"
 
-export default function Header() {
+export default function Header({children}) {
   return (
-    <header sx={{ mb: [5, 6] }}>
-      <Flex sx={{ alignItems: `center`, justifyContent: `space-between` }}>
-        <HeaderTitle />
-      </Flex>
-      <div
+    <div
+      sx={{
+        backgroundColor: '#fff',
+        margin: '0 auto',
+        padding: `${rhythm(2)}`,
+        paddingTop: `${rhythm(1.5)}`
+      }}
+    >
+      <Link to={`/`}>
+        <h3
+          sx={{
+            marginBottom: `${rhythm(2)}`,
+            display: 'inline-block',
+            fontStyle: 'normal',
+          }}
+        >
+          Pandas Eating Lots
+        </h3>
+      </Link>
+      <Link
+        to={`/about/`}
         sx={{
-          boxSizing: `border-box`,
-          display: `flex`,
-          variant: `dividers.bottom`,
-          alignItems: `center`,
-          justifyContent: `space-between`,
-          mt: 3,
-          color: `secondary`,
-          a: { color: `secondary`, ":hover": { color: `heading` } },
-          flexFlow: `wrap`,
+          float: 'right'
         }}
       >
-        <Navigation />
-        <HeaderExternalLinks />
-      </div>
-    </header>
+        About
+      </Link>
+      {children}
+    </div>
   )
 }

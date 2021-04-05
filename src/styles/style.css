@@ -81,6 +81,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
   color: var(--color-text);
+  background-color: #f6f6f6;
 }
 
 footer {
@@ -239,6 +240,9 @@ a:focus {
 }
 
 /* Custom classes */
+.custom-wrapper {
+  background-color: #f6f6f6;
+}
 
 .global-wrapper {
   margin: var(--spacing-0) auto;
