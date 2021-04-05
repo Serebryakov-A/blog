@@ -1,38 +1,44 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
 import { Link } from "gatsby"
-import { rhythm } from "../utils/typography"
+import React from "react"
+import Icon from "./icons/icon"
+import { cn } from "../utils/helpers"
 
-export default function Header({children}) {
+import * as styles from './header.module.css'
+
+const Header = ({ onHideNav, onShowNav, showNav }) => {
   return (
-    <div
-      sx={{
-        backgroundColor: '#fff',
-        margin: '0 auto',
-        padding: `${rhythm(2)}`,
-        paddingTop: `${rhythm(1.5)}`
-      }}
-    >
-      <Link to={`/`}>
-        <h3
-          sx={{
-            marginBottom: `${rhythm(2)}`,
-            display: 'inline-block',
-            fontStyle: 'normal',
-          }}
+    <div className={styles.root}>
+      <div className={styles.wrapper}>
+        <h1 className={styles.branding}>
+          <Link to="/">Andrey Serebryakov</Link>
+        </h1>
+
+        <button
+          className={styles.toggleNavButton}
+          onClick={showNav ? onHideNav : onShowNav}
         >
-          Pandas Eating Lots
-        </h3>
-      </Link>
-      <Link
-        to={`/about/`}
-        sx={{
-          float: 'right'
-        }}
-      >
-        About
-      </Link>
-      {children}
+          <Icon symbol="hamburger" />
+        </button>
+
+        <nav className={cn(styles.nav, showNav && styles.showNav)}>
+          <ul>
+            <li>
+              <Link to="/about/">About</Link>
+            </li>
+            <li>
+              <Link to="/projects/">Projects</Link>
+            </li>
+            <li>
+              <Link to="/blog/">Blog</Link>
+            </li>
+            <li>
+              <Link to="/contact/">Contact</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   )
 }
+
+export default Header
