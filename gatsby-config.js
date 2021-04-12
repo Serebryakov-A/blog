@@ -8,34 +8,39 @@ module.exports = {
     description: `Blog`,
     social: [
       {
-        name: 'GitHub',
-        url: `https://github.com/Serebryakov-A`
+        name: "GitHub",
+        url: `https://github.com/Serebryakov-A`,
       },
       {
-        name: 'LinkedIn',
-        url: 'https://linkedin.com/in/serebrjakovs-andrejs-850617134'
-      }
+        name: "LinkedIn",
+        url: "https://linkedin.com/in/serebrjakovs-andrejs-850617134",
+      },
     ],
     navigation: [
       {
-        title: 'About',
-        slug: '/about'
+        title: "About",
+        slug: "/about",
       },
       {
-        title: 'Projects',
-        slug: '/projects'
-      }
-    ]
+        title: "Projects",
+        slug: "/projects",
+      },
+    ],
   },
   plugins: [
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
+    "gatsby-plugin-theme-ui",
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        postCssPlugins: [require('postcss-import'), require(`postcss-preset-env`)({ stage: 0 })],
+        postCssPlugins: [
+          require("postcss-import"),
+          require(`postcss-preset-env`)({ stage: 0 }),
+        ],
       },
     },
-    `gatsby-plugin-image`,
-    'gatsby-plugin-theme-ui',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -67,6 +72,12 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              theme: "Dark+ (default dark)",
+            },
+          },
+          {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
               wrapperStyle: `margin-bottom: 1.0725rem`,
@@ -78,8 +89,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
     //   options: {
