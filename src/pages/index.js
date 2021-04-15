@@ -4,6 +4,28 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../containers/layout"
 import SEO from "../components/seo"
+import styled from "styled-components"
+
+const SimpleLink = styled(Link)`
+  text-decoration: none;
+  color: #000;
+`
+
+const Header = styled.h1`
+  margin: 0.37em 0;
+`
+
+const Tag = styled.small`
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #f7a046;
+  margin-left: 1em;
+`
+
+const Date = styled.small`
+  text-transform: uppercase;
+  font-weight: 600;
+`
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -27,12 +49,19 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
-      <ol style={{ listStyle: `none` }}>
+      <ol style={{ listStyle: `none`, marginLeft: 0 }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
-            <div style={{ backgroundColor: '#fff', borderBottom: '1px solid #eee', margin: 0, padding: '5.34em 6.67em'}}>
+            <div
+              style={{
+                backgroundColor: "#fff",
+                borderBottom: "1px solid #eee",
+                margin: 0,
+                padding: "1.34em 4.67em",
+              }}
+            >
               <li key={post.fields.slug}>
                 <article
                   className="post-list-item"
@@ -40,12 +69,13 @@ const BlogIndex = ({ data, location }) => {
                   itemType="http://schema.org/Article"
                 >
                   <header>
-                    <h2>
-                      <Link to={post.fields.slug} itemProp="url">
+                    <Date>{post.frontmatter.date}</Date>
+                    <Tag>TAG PLACEHOLDER</Tag>
+                    <Header>
+                      <SimpleLink to={post.fields.slug} itemProp="url">
                         <span itemProp="headline">{title}</span>
-                      </Link>
-                    </h2>
-                    <small>{post.frontmatter.date}</small>
+                      </SimpleLink>
+                    </Header>
                   </header>
                   <section>
                     <p
@@ -55,6 +85,11 @@ const BlogIndex = ({ data, location }) => {
                       itemProp="description"
                     />
                   </section>
+                  <footer>
+                    <Link to={post.fields.slug} itemProp="url">
+                      Read More »
+                    </Link>
+                  </footer>
                 </article>
               </li>
             </div>

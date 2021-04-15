@@ -61,6 +61,7 @@
   --color-heading: #1a202c;
   --color-heading-black: black;
   --color-accent: #d1dce5;
+  --color-secondary-orange: #f7a046
 }
 
 /* HTML elements */
@@ -99,12 +100,14 @@ hr {
 /* Link */
 
 a {
+  text-decoration: none;
   color: var(--color-primary);
 }
 
 a:hover,
 a:focus {
   text-decoration: none;
+  color: var(--color-secondary-orange)
 }
 
 /* Custom classes */
