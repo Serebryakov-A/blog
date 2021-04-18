@@ -32,6 +32,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
     "gatsby-plugin-theme-ui",
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
