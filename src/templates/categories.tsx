@@ -35,7 +35,6 @@ const Categories = ({ pageContext, data }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title={"Categories - " + category} />
-      <Bio />
       <ol style={{ listStyle: `none`, marginLeft: 0 }}>
         {posts.map(edge => {
           const post = edge.node
@@ -90,7 +89,7 @@ const Categories = ({ pageContext, data }) => {
 export default Categories
 
 export const pageQuery = graphql`
-  query categories($tag: String) {
+  query categories($category: String) {
     site {
       siteMetadata {
         title
@@ -98,7 +97,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tag: { in: [$tag] } } }
+      filter: { frontmatter: { searchTag: { in: [$category] } } }
     ) {
       edges {
         node {
@@ -111,6 +110,7 @@ export const pageQuery = graphql`
             title
             description
             tag
+            searchTag
           }
         }
       }

@@ -26,7 +26,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
         categories: allMarkdownRemark(limit: 2000) {
-          group(field: frontmatter___tag) {
+          group(field: frontmatter___searchTag) {
             fieldValue
           }
         }
@@ -121,6 +121,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       description: String
       date: Date @dateformat
       tag: String
+      searchTag: String
     }
 
     type Fields {

@@ -6,6 +6,8 @@ import Layout from "../containers/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 
+const _ = require("lodash")
+
 const SimpleLink = styled(Link)`
   text-decoration: none;
   color: #000;
@@ -35,7 +37,6 @@ const BlogIndex = ({ data, location }) => {
     return (
       <Layout location={location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -48,7 +49,6 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
       <ol style={{ listStyle: `none`, marginLeft: 0 }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -70,7 +70,9 @@ const BlogIndex = ({ data, location }) => {
                 >
                   <header>
                     <Date>{post.frontmatter.date}</Date>
-                    <Tag>{post.frontmatter.tag}</Tag>
+                    <SimpleLink to={'categories/' + _.kebabCase(post.frontmatter.searchTag)}>
+                      <Tag>{post.frontmatter.tag}</Tag>
+                    </SimpleLink>
                     <Header>
                       <SimpleLink to={post.fields.slug} itemProp="url">
                         <span itemProp="headline">{title}</span>
@@ -120,6 +122,7 @@ export const pageQuery = graphql`
           title
           description
           tag
+          searchTag
         }
       }
     }
