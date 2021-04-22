@@ -1,7 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../containers/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
@@ -27,6 +26,11 @@ const Tag = styled.small`
 const Date = styled.small`
   text-transform: uppercase;
   font-weight: 600;
+`
+
+const ReadTime = styled.small`
+  display: block;
+  margin-top: 0.2rem;
 `
 
 const BlogIndex = ({ data, location }) => {
@@ -70,9 +74,14 @@ const BlogIndex = ({ data, location }) => {
                 >
                   <header>
                     <Date>{post.frontmatter.date}</Date>
-                    <SimpleLink to={'categories/' + _.kebabCase(post.frontmatter.searchTag)}>
+                    <SimpleLink
+                      to={
+                        "categories/" + _.kebabCase(post.frontmatter.searchTag)
+                      }
+                    >
                       <Tag>{post.frontmatter.tag}</Tag>
                     </SimpleLink>
+                    <ReadTime>{post.fields.readingTime.text}</ReadTime>
                     <Header>
                       <SimpleLink to={post.fields.slug} itemProp="url">
                         <span itemProp="headline">{title}</span>
@@ -116,6 +125,9 @@ export const pageQuery = graphql`
         excerpt
         fields {
           slug
+          readingTime {
+            text
+          }
         }
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
