@@ -29,7 +29,7 @@ const Header = ({ onHideNav, onShowNav, showNav }) => {
               <Link to="/projects/">Projects</Link>
             </li>
             <li>
-              <Link to="/blog/">Blog</Link>
+              <Link to="/">Blog</Link>
             </li>
             <li>
               <Link to="/contact/">Contact</Link>
