@@ -1,12 +1,65 @@
 import React from "react"
-import Header from "../components/header"
+import Layout from "../containers/layout"
+import SEO from "../components/seo"
+import styled from "styled-components"
 
-export default function About() {
+const Header = styled.h1`
+  margin: 0.37em 0;
+`
+
+export default function About({ location, siteTitle }) {
   return (
-    <div style={{ color: `teal` }}>
-      <Header headerText="About Gatsby"/>
-      <Header headerText="It's pretty cool" />
-      <p>Such wow. Very React.</p>
-    </div>
+    <Layout location={location} title={siteTitle}>
+      <SEO title="About" />
+      <div
+        style={{
+          backgroundColor: "#fff",
+          borderBottom: "1px solid #eee",
+          margin: 0,
+          padding: "1.34em 4.67em",
+        }}
+      >
+        <header>
+          <Header>
+            <span itemProp="headline">About me</span>
+          </Header>
+        </header>
+        <section>
+          <p>
+          AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
+            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
+            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
+            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
+            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
+            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
+            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAA            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
+            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
+            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
+            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
+            ASDSADEFOQFQ ASDASAAAAAAA
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
+            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
+            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
+            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
+            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
+            ASDSADEFOQFQ ASDAS
+          </p>
+        </section>
+      </div>
+    </Layout>
   )
 }
