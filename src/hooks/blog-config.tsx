@@ -4,9 +4,9 @@ type UseBlogConfigProps = {
   site: {
     siteMetadata: {
       social: {
-        name: string
-        url: string
-      }[]
+        github: string
+        linkedin: string
+      }
       navigation: {
         title: string
         slug: string
@@ -21,8 +21,8 @@ const useBlogConfig = () => {
       site {
         siteMetadata {
           social {
-            name
-            url
+            github
+            linkedIn
           }
           navigation {
             title

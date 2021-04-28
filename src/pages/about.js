@@ -21,42 +21,29 @@ export default function About({ location, siteTitle }) {
       >
         <header>
           <Header>
-            <span itemProp="headline">About me</span>
+            <span itemProp="headline">Hi, I'm Andrey Serebryakov</span>
           </Header>
         </header>
         <section>
           <p>
-          AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
-            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
-            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
-            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
-            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
-            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
-            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAA            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
-            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
-            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
-            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
-            ASDSADEFOQFQ ASDASAAAAAAA
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
-            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
-            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
-            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
-            ASDSADEFOQFQ ASDAS            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AASDAD,QFQGMGMRKGRGFQ
-            ASDSADEFOQFQ ASDAS
+            I wonder why you even opened this page. I must have interested you
+            somehow or helped you in some way. If it is so - then this blog is
+            doing its purpose. The reason why I have created blog is to store my
+            ideas and discoveries that might help someone else or me at some
+            point in the future. This is the storage to all of my writings on
+            programming, web development, definetely self improvement and maybe
+            productivity.
+          </p>
+          <p>
+            As I'm just starting out blog content is a subject to change. I will
+            showcase some of projects and some curious ideas with links to
+            GitHub. It will also host some of programming guides and tutorials.
+          </p>
+          <p>
+            There is no certain publishing schedule for now.
+            <br />
+            If you want to contact me directly you can use contact form which is
+            not currently available.
           </p>
         </section>
       </div>

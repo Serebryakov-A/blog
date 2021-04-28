@@ -3,19 +3,13 @@ module.exports = {
     title: `Andrey Serebryakov`,
     author: {
       name: `Andrey Serebryakov`,
-      summary: `I create things that noone needs`,
+      summary: `who is fighting procrastination and laziness to write these posts! `,
     },
-    description: `Blog`,
-    social: [
-      {
-        name: "GitHub",
-        url: `https://github.com/Serebryakov-A`,
-      },
-      {
-        name: "LinkedIn",
-        url: "https://linkedin.com/in/serebrjakovs-andrejs-850617134",
-      },
-    ],
+    description: `I am Andrey Serebryakov and I'm a software developer. Trying to fight procrastination and laziness to fulfill dreams and develop awesome apps!`,
+    social:  {
+      github: `https://github.com/Serebryakov-A`,
+      linkedIn: `https://linkedin.com/in/serebrjakovs-andrejs-850617134`
+    },
     navigation: [
       {
         title: "About",
@@ -164,13 +158,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Andrey Serebryakov Blog`,
+        short_name: `Andrey Serebryakov`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/bio.jpg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,

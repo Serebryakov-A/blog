@@ -202,7 +202,7 @@ a:focus {
   padding-bottom: 0.1rem;
 }
 
-.table-of-contents ol li>ol {
+.table-of-contents ol li > ol {
   margin-top: 0.3rem;
 }
 
@@ -213,6 +213,10 @@ a:focus {
 
 .table-of-contents ol li p {
   margin-bottom: 0.3rem;
+}
+
+hr {
+  background: var(--color-secondary-orange);
 }
 
 /* Media queries */
