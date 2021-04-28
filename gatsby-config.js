@@ -67,6 +67,17 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-table-of-contents`,
+            options: {
+              exclude: "Table of Contents",
+              tight: true,
+              ordered: true,
+              fromHeading: 1,
+              toHeading: 2,
+              className: "table-of-contents"
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 630,
@@ -88,6 +99,7 @@ module.exports = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           `gatsby-remark-reading-time`,
+          `gatsby-remark-autolink-headers`
         ],
       },
     },
