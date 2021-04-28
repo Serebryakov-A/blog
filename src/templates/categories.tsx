@@ -27,11 +27,10 @@ const Date = styled.small`
   font-weight: 600;
 `
 
-const Categories = ({ pageContext, data }) => {
+const Categories = ({ location, pageContext, data }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.edges
   const { category } = pageContext
-  console.log(data);
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title={"Categories - " + category} />
