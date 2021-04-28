@@ -1,11 +1,10 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
+import Bio from "../components/bio"
 import Layout from "../containers/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
-
-const _ = require("lodash")
 
 const SimpleLink = styled(Link)`
   text-decoration: none;
@@ -28,35 +27,18 @@ const Date = styled.small`
   font-weight: 600;
 `
 
-const ReadTime = styled.small`
-  display: block;
-  margin-top: 0.2rem;
-`
-
-const BlogIndex = ({ data, location }) => {
+const Categories = ({ pageContext, data }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
-
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
-    )
-  }
-
+  const posts = data.allMarkdownRemark.edges
+  const { category } = pageContext
+  console.log(data);
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title={"Categories - " + category} />
       <ol style={{ listStyle: `none`, marginLeft: 0 }}>
-        {posts.map(post => {
+        {posts.map(edge => {
+          const post = edge.node
           const title = post.frontmatter.title || post.fields.slug
-
           return (
             <div
               style={{
@@ -74,14 +56,7 @@ const BlogIndex = ({ data, location }) => {
                 >
                   <header>
                     <Date>{post.frontmatter.date}</Date>
-                    <SimpleLink
-                      to={
-                        "categories/" + _.kebabCase(post.frontmatter.searchTag)
-                      }
-                    >
-                      <Tag>{post.frontmatter.tag}</Tag>
-                    </SimpleLink>
-                    <ReadTime>{post.fields.readingTime.text}</ReadTime>
+                    <Tag>{post.frontmatter.tag}</Tag>
                     <Header>
                       <SimpleLink to={post.fields.slug} itemProp="url">
                         <span itemProp="headline">{title}</span>
@@ -111,30 +86,32 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default Categories
 
 export const pageQuery = graphql`
-  query {
+  query categories($category: String) {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-          readingTime {
-            text
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { searchTag: { in: [$category] } } }
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
           }
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-          tag
-          searchTag
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+            tag
+            searchTag
+          }
         }
       }
     }

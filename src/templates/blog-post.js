@@ -2,8 +2,14 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
-import Layout from "../components/layout"
+import Layout from "../containers/layout"
 import SEO from "../components/seo"
+import styled from "styled-components";
+
+const Article = styled.article`
+  padding: 4.34em 4.67em;
+  background: #fff
+`
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -16,14 +22,14 @@ const BlogPostTemplate = ({ data, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article
+      <Article
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
       >
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          <p>{post.frontmatter.date + ` - ` + post.fields.readingTime.text}</p>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -33,7 +39,7 @@ const BlogPostTemplate = ({ data, location }) => {
         <footer>
           <Bio />
         </footer>
-      </article>
+      </Article>
       <nav className="blog-post-nav">
         <ul
           style={{
@@ -85,6 +91,11 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+      }
+      fields {
+        readingTime {
+          text
+        }
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

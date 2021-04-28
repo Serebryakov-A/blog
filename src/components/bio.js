@@ -19,7 +19,7 @@ const Bio = () => {
             summary
           }
           social {
-            twitter
+            github
           }
         }
       }
@@ -30,13 +30,14 @@ const Bio = () => {
   const author = data.site.siteMetadata?.author
   const social = data.site.siteMetadata?.social
 
+  console.log(social);
   return (
     <div className="bio">
       <StaticImage
         className="bio-avatar"
         layout="fixed"
         formats={["AUTO", "WEBP", "AVIF"]}
-        src="../images/profile-pic.png"
+        src="../images/bio.jpg"
         width={50}
         height={50}
         quality={95}
@@ -46,8 +47,8 @@ const Bio = () => {
         <p>
           Written by <strong>{author.name}</strong> {author?.summary || null}
           {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
+          <a target="_blank" rel="noreferrer" href={`${social.github || ``}`}>
+            Results available on github ;)
           </a>
         </p>
       )}

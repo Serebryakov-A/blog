@@ -1,23 +1,52 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Andrey Serebryakov`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Andrey Serebryakov`,
+      summary: `who is fighting procrastination and laziness to write these posts! `,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    social: {
-      twitter: `kylemathews`,
+    description: `I am Andrey Serebryakov and I'm a software developer. Trying to fight procrastination and laziness to fulfill dreams and develop awesome apps!`,
+    social:  {
+      github: `https://github.com/Serebryakov-A`,
+      linkedIn: `https://linkedin.com/in/serebrjakovs-andrejs-850617134`
     },
+    navigation: [
+      {
+        title: "About",
+        slug: "/about",
+      },
+      {
+        title: "Projects",
+        slug: "/projects",
+      },
+    ],
   },
   plugins: [
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
+    "gatsby-plugin-theme-ui",
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [
+          require("postcss-import"),
+          require(`postcss-preset-env`)({ stage: 0 }),
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
       },
     },
     {
@@ -32,9 +61,26 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-table-of-contents`,
+            options: {
+              exclude: "Table of Contents",
+              tight: true,
+              ordered: true,
+              fromHeading: 1,
+              toHeading: 2,
+              className: "table-of-contents"
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 630,
+            },
+          },
+          {
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              theme: "Dark+ (default dark)",
             },
           },
           {
@@ -46,11 +92,11 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-remark-reading-time`,
+          `gatsby-remark-autolink-headers`
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
     //   options: {
@@ -112,13 +158,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Andrey Serebryakov Blog`,
+        short_name: `Andrey Serebryakov`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/bio.jpg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,
