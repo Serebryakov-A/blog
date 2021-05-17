@@ -193,6 +193,13 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
+.blog-entry {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  margin: 0;
+  padding: 1.34em 4.67em;
+}
+
 .table-of-contents {
   background: #fafafa;
   margin: 2rem 0;
@@ -220,14 +227,23 @@ hr {
 }
 
 /* Media queries */
+@media (max-width: 37.5rem) {
+  .blog-entry {
+    padding: 0.1em 1em;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .global-wrapper {
+    padding: var(--spacing-4) var(--spacing-4);
+  }
+}
 
 @media (max-width: 42rem) {
   blockquote {
     padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4);
     margin-left: var(--spacing-0);
-  }
-  ul,
-  ol {
-    list-style-position: inside;
   }
 }

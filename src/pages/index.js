@@ -58,14 +58,7 @@ const BlogIndex = ({ data, location }) => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
-            <div
-              style={{
-                backgroundColor: "#fff",
-                borderBottom: "1px solid #eee",
-                margin: 0,
-                padding: "1.34em 4.67em",
-              }}
-            >
+            <div className="blog-entry">
               <li key={post.fields.slug}>
                 <article
                   className="post-list-item"

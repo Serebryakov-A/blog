@@ -11,14 +11,7 @@ export default function About({ location, siteTitle }) {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="About" />
-      <div
-        style={{
-          backgroundColor: "#fff",
-          borderBottom: "1px solid #eee",
-          margin: 0,
-          padding: "1.34em 4.67em",
-        }}
-      >
+      <div className="blog-entry">
         <header>
           <Header>
             <span itemProp="headline">Hi, I'm Andrey Serebryakov</span>

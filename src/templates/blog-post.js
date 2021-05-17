@@ -8,7 +8,15 @@ import styled from "styled-components";
 
 const Article = styled.article`
   padding: 4.34em 4.67em;
-  background: #fff
+  background: #fff;
+
+  @media(max-width: 37.5rem) {
+    padding: 2em 2.5em;
+  }
+
+  @media (max-width: 28rem) {
+    padding: 1.2em 1.2em;
+  }
 `
 
 const BlogPostTemplate = ({ data, location }) => {
